@@ -14,7 +14,7 @@ sudo nixos-rebuild switch;
 
 ##Instalação dos programas Flatpak##
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub com.adobe.Flash-Player-Projector -y; flatpak install flathub com.skype.Client -y;
+flatpak install flathub com.adobe.Flash-Player-Projector -y; flatpak install flathub com.skype.Client -y; flatpak install flathub com.transmissionbt.Transmission -y;
 
 ##Atualização do Flatpak##
 flatpak update -y;
