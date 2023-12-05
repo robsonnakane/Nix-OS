@@ -1,4 +1,4 @@
-Encontrar o # abaixo e substituir apenas os programas no arquivo etc/nixos/configuration.nix:
+Encontrar essa linha abaixo e substituir apenas os programas no arquivo etc/nixos/configuration.nix:
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.robsonnakane = {
@@ -34,7 +34,7 @@ Encontrar o # abaixo e substituir apenas os programas no arquivo etc/nixos/confi
     ];
   };
 
-Adicionar esta # logo abaixo dos programas acima:
+Adicionar as linhas abaixo dos programas acima:
   #Install Flatpak
   services.flatpak.enable = true;
   #Automatic Upgrades
