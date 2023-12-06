@@ -31,6 +31,7 @@ Encontrar essa linha abaixo e substituir apenas os programas no arquivo etc/nixo
       audacious
       asunder
       tuxguitar
+      gnome.gnome-disk-utility
     ];
   };
 
