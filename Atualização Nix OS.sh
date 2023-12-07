@@ -7,7 +7,8 @@
 #/home/robsonnakane/Documentos/'Atualização Nix OS.sh'#
 
 #Edição do arquivo no terminal#
-#nano /home/robsonnakane/Documentos/'Atualização Nix OS.sh'#
+#sudo nano /home/robsonnakane/Documentos/'Atualização Nix OS.sh'#
+#sudo nano /etc/nixos/configuration.nix
 
 ###Atualização do sitema
 sudo nixos-rebuild switch;
