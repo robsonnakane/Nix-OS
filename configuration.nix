@@ -6,7 +6,6 @@ Encontrar essa linha abaixo e substituir apenas os programas no arquivo etc/nixo
     description = "Robson Nakane";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
       neofetch
       simple-scan
       gnome.gnome-tweaks
