@@ -13,25 +13,8 @@ Encontrar essa linha abaixo e substituir apenas os programas no arquivo etc/nixo
       jdk
       btop
       kitty
-      spotify
-      vlc
-      steam
-      zoom
-      kdenlive
-      onlyoffice-bin
-      transmission
-      inkscape-with-extensions
-      thunderbird
-      rpi-imager
-      mediawriter
-      gnome.gedit
-      google-chrome
-      gnome-firmware
-      audacious
-      asunder
-      tuxguitar
-      gnome.gnome-disk-utility
-    ];
+      
+];
   };
 
 Adicionar as linhas abaixo dos programas acima:
