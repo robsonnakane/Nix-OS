@@ -12,6 +12,7 @@ Encontrar essa linha abaixo e substituir apenas os programas no arquivo etc/nixo
       jdk
       btop
       kitty
+      gnome.gnome-disk-utility
       
 ];
   };
