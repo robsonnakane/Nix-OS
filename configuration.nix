@@ -23,3 +23,10 @@ Adicionar as linhas abaixo dos programas acima:
   #Automatic Upgrades
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
+  system.autoUpgrade.channel = "https://channels.nixos.org/nixos-unstable"
+
+##To build an ISO image for the channel nixos-unstable:##
+# $ git clone https://github.com/NixOS/nixpkgs.git
+# $ cd nixpkgs/nixos
+# $ git switch nixos-unstable
+# $ nix-build -A config.system.build.isoImage -I nixos-config=modules/installer/cd-dvd/installation-cd-minimal.nix default.nix
