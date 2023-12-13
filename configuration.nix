@@ -23,7 +23,8 @@ Adicionar as linhas abaixo dos programas acima:
   #Automatic Upgrades
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
-  system.autoUpgrade.channel = "https://channels.nixos.org/nixos-unstable"
+  #Upgrade para a versão unstable do NixOS ( deixar como comentário após a alteração )  
+  #system.autoUpgrade.channel = "https://channels.nixos.org/nixos-unstable"
 
 ##To build an ISO image for the channel nixos-unstable:##
 # $ git clone https://github.com/NixOS/nixpkgs.git
