@@ -10,8 +10,8 @@
 #sudo nano /home/robsonnakane/Documentos/'Atualização Nix OS.sh'#
 #sudo nano /etc/nixos/configuration.nix
 
-##Alteração do channel para unstable##
-sudo nix-channel --add https://channels.nixos.org/nixos-unstable nixos
+##Alteração do channel para unstable ( Deixar como comentário após a primeira atualização )##
+#sudo nix-channel --add https://channels.nixos.org/nixos-unstable nixos
 
 ###Atualização do sitema
 sudo nixos-rebuild switch --upgrade;
