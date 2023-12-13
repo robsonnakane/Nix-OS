@@ -14,7 +14,6 @@
 sudo nix-channel --add https://channels.nixos.org/nixos-unstable nixos
 
 ###Atualização do sitema
-sudo nixos-rebuild switch --update;
 sudo nixos-rebuild switch --upgrade;
 
 ##Instalação dos programas Flatpak##
