@@ -1,28 +1,44 @@
 Encontrar essa linha abaixo e substituir apenas os programas no arquivo etc/nixos/configuration.nix:
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.robsonnakane = {
-    isNormalUser = true;
-    description = "Robson Nakane";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      neofetch
-      simple-scan
-      gnome.gnome-tweaks
-      jdk
-      btop
-      kitty
-      gnome.gnome-disk-utility
-      
-];
-  };
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+  pkgs.google-chrome
+  pkgs.gedit
+  pkgs.thunderbird
+  pkgs.firefox
+  pkgs.neofetch
+  pkgs.gnome.simple-scan
+  pkgs.gnome.gnome-tweaks
+  pkgs.jdk
+  pkgs.btop
+  pkgs.kitty
+  pkgs.spotify
+  pkgs.vlc
+  pkgs.steam
+  pkgs.zoom-us
+  pkgs.libsForQt5.kdenlive
+  pkgs.onlyoffice-bin
+  pkgs.transmission
+  pkgs.inkscape
+  pkgs.rpi-imager
+  pkgs.mediawriter
+  pkgs.gnome-firmware
+  pkgs.audacious
+  pkgs.asunder
+  pkgs.tuxguitar
+  pkgs.gnome.gnome-boxes
 
-Adicionar as linhas abaixo dos programas acima:
-  #Install Flatpak
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  wget
+  ];
+
+#Install Flatpak
   services.flatpak.enable = true;
   #Automatic Upgrades
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
+
   #Upgrade para a versão unstable do NixOS ( deixar como comentário após a alteração )  
   #system.autoUpgrade.channel = "https://channels.nixos.org/nixos-unstable"
 
