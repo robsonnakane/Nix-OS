@@ -4,7 +4,6 @@ Encontrar essa linha abaixo e substituir apenas os programas no arquivo etc/nixo
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   pkgs.google-chrome
-  pkgs.gedit
   pkgs.thunderbird
   pkgs.firefox
   pkgs.neofetch
