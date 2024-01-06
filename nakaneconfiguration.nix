@@ -28,6 +28,7 @@ Encontrar essa linha abaixo e substituir apenas os programas no arquivo etc/nixo
   pkgs.tuxguitar
   pkgs.gnome.gnome-boxes
   pkgs.lsd
+  pkgs.gedit
 
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
