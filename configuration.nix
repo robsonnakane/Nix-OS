@@ -137,8 +137,7 @@
   #Automatic Upgrades
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest; 
-# Use pkgs.linuxPackages_6_5 if nvidia drivers fail, use pkgs.linuxPackages_latest if nvidia drivers work on "latest"!
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   system.autoUpgrade.channel = "https://channels.nixos.org/nixos-23.11";
 
   #Upgrade para a versão unstable do NixOS ( deixar como comentário após a alteração )  
