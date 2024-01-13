@@ -126,6 +126,7 @@
   pkgs.lsd
   pkgs.krusader
   pkgs.libsForQt5.kompare
+  pkgs.linuxKernel.kernels.linux_latest_libre
 
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
