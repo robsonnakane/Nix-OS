@@ -13,6 +13,9 @@
 ##Alteração do channel para unstable ( executar o comando primeiro e deixar como comentário após a primeira atualização )##
 #sudo nix-channel --add https://channels.nixos.org/nixos-unstable nixos
 
+#Limpeza dos pacotes inutilizados:
+nix-collect-garbage
+
 ###Atualização do sitema
 sudo nixos-rebuild switch --upgrade;
 
