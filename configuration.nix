@@ -135,10 +135,7 @@
 
 #Install Flatpak
   services.flatpak.enable = true;
-  #Automatic Upgrades
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = true;
-#para computadores mais novos
+  #para computadores mais novos
   boot.kernelPackages = pkgs.linuxPackages_latest;
 #para computadores mais antigos
   #boot.kernelPackages = pkgs.linuxPackages_zen;
