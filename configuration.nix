@@ -47,7 +47,3 @@ Encontrar a linha abaixo e substituir o conteúdo adicional ao arquivo:
   #boot.kernelPackages = pkgs.linuxPackages_latest;
   ##para computadores mais antigos
   #boot.kernelPackages = pkgs.linuxPackages_zen;
-  system.autoUpgrade.channel = "https://channels.nixos.org/nixos-23.11";
-
-  #Upgrade para a versão unstable do NixOS ( deixar como comentário após a alteração )  
-  #system.autoUpgrade.channel = "https://channels.nixos.org/nixos-unstable"
