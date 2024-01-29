@@ -19,7 +19,6 @@ Encontrar a linha abaixo e substituir o conteúdo adicional ao arquivo:
   pkgs.zoom-us
   pkgs.libsForQt5.kdenlive
   pkgs.onlyoffice-bin
-  pkgs.transmission_4
   pkgs.inkscape
   pkgs.rpi-imager
   pkgs.mediawriter
@@ -34,7 +33,8 @@ Encontrar a linha abaixo e substituir o conteúdo adicional ao arquivo:
   pkgs.libsForQt5.kompare
   pkgs.foomatic-db
   pkgs.bluez
-  #pkgs.linuxKernel.kernels.linux_latest_libre #para computadores mais novos
+  pkgs.gnome.gnome-disk-utility  
+  pkgs.linuxKernel.kernels.linux_latest_libre #para computadores mais novos
   #pkgs.linuxKernel.kernels.linux_zen #para computadores mais antigos
   
 #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
