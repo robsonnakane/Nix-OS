@@ -4,7 +4,7 @@ Encontrar a linha abaixo e substituir o conteúdo adicional ao arquivo:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   pkgs.google-chrome
-  pkgs.gedit
+  pkgs.emacs
   pkgs.thunderbird
   pkgs.firefox
   pkgs.neofetch
@@ -19,7 +19,7 @@ Encontrar a linha abaixo e substituir o conteúdo adicional ao arquivo:
   pkgs.zoom-us
   pkgs.libsForQt5.kdenlive
   pkgs.onlyoffice-bin
-  pkgs.transmission
+  pkgs.transmission_4
   pkgs.inkscape
   pkgs.rpi-imager
   pkgs.mediawriter
