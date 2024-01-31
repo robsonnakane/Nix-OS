@@ -1,30 +1,25 @@
-Encontrar a linha abaixo e substituir o conteúdo adicional ao arquivo:
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+  pkgs.steam
+  pkgs.wineWowPackages.waylandFull  
   pkgs.google-chrome
-  pkgs.emacs
   pkgs.thunderbird
   pkgs.firefox
   pkgs.neofetch
   pkgs.gnome.simple-scan
-  pkgs.gnome.gnome-tweaks
   pkgs.jdk
   pkgs.btop
   pkgs.kitty
   pkgs.spotify
   pkgs.vlc
-  pkgs.steam
   pkgs.zoom-us
   pkgs.libsForQt5.kdenlive
   pkgs.onlyoffice-bin
   pkgs.inkscape
   pkgs.rpi-imager
   pkgs.mediawriter
-  pkgs.gnome-firmware
   pkgs.audacious
-  pkgs.asunder
   pkgs.tuxguitar
   pkgs.gnome.gnome-boxes
   pkgs.libsForQt5.kate
@@ -33,17 +28,31 @@ Encontrar a linha abaixo e substituir o conteúdo adicional ao arquivo:
   pkgs.libsForQt5.kompare
   pkgs.foomatic-db
   pkgs.bluez
-  pkgs.gnome.gnome-disk-utility  
-  pkgs.linuxKernel.kernels.linux_latest_libre #para computadores mais novos
-  #pkgs.linuxKernel.kernels.linux_zen #para computadores mais antigos
-  
-#  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  pkgs.gnome.gnome-disk-utility
+  #pkgs.linuxKernel.kernels.linux_latest_libre #para computadores mais novos
+  #pkgs.linuxKernel.kernels.linux_zen #para computadores mais antigos ( caso não funcione, não ultilize )
+
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
 
-#Install Flatpak
+  # Enable Bluetooth support
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
+  #Enable Flatpak
   services.flatpak.enable = true;
-  ##para computadores mais novos
-  #boot.kernelPackages = pkgs.linuxPackages_latest;
-  ##para computadores mais antigos
-  #boot.kernelPackages = pkgs.linuxPackages_zen;
+
+  #Enable Kernels Packages
+  #boot.kernelPackages = pkgs.linuxPackages_latest; #para computadores mais novos
+  #boot.kernelPackages = pkgs.linuxPackages_zen; #para computadores mais antigos
+
+  #Enable Steam
+  programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+};
+
+  #Enable gamescope for Steam
+  programs.steam.gamescopeSession.enable = true;
