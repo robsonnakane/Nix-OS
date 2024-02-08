@@ -1,34 +1,34 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  pkgs.steam
-  pkgs.wineWowPackages.waylandFull  
-  pkgs.google-chrome
-  pkgs.thunderbird
-  pkgs.firefox
-  pkgs.neofetch
-  pkgs.gnome.simple-scan
-  pkgs.jdk
-  pkgs.btop
-  pkgs.kitty
-  pkgs.spotify
-  pkgs.vlc
-  pkgs.zoom-us
-  pkgs.libsForQt5.kdenlive
-  pkgs.onlyoffice-bin
-  pkgs.inkscape
-  pkgs.rpi-imager
-  pkgs.mediawriter
-  pkgs.audacious
-  pkgs.tuxguitar
-  pkgs.gnome.gnome-boxes
-  pkgs.libsForQt5.kate
-  pkgs.lsd
-  pkgs.krusader
-  pkgs.libsForQt5.kompare
-  pkgs.foomatic-db
-  pkgs.bluez
-  pkgs.gnome.gnome-disk-utility
+  steam
+  wineWowPackages.waylandFull  
+  google-chrome
+  thunderbird
+  firefox
+  neofetch
+  gnome.simple-scan
+  jdk
+  btop
+  kitty
+  spotify
+  vlc
+  zoom-us
+  libsForQt5.kdenlive
+  onlyoffice-bin
+  inkscape
+  rpi-imager
+  mediawriter
+  audacious
+  tuxguitar
+  gnome.gnome-boxes
+  libsForQt5.kate
+  lsd
+  krusader
+  libsForQt5.kompare
+  foomatic-db
+  bluez
+  gnome.gnome-disk-utility
   #pkgs.linuxKernel.kernels.linux_latest_libre #para computadores mais novos
   #pkgs.linuxKernel.kernels.linux_zen #para computadores mais antigos ( caso não funcione, não ultilize )
 
