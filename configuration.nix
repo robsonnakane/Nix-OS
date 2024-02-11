@@ -29,6 +29,7 @@
   foomatic-db
   bluez
   gnome.gnome-disk-utility
+  anydesk
   gnome.nautilus #apenas GNOME without the apps sem a #
   #pkgs.linuxKernel.kernels.linux_latest_libre #para computadores mais novos
   #pkgs.linuxKernel.kernels.linux_zen #para computadores mais antigos ( caso não funcione, não ultilize )
