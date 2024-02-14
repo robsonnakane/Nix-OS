@@ -31,6 +31,8 @@
   gnome.gnome-disk-utility
   anydesk
   gnome.nautilus #apenas GNOME without the apps sem a #
+  gnome.gnome-software
+  flatpak
   #pkgs.linuxKernel.kernels.linux_latest_libre #para computadores mais novos
   #pkgs.linuxKernel.kernels.linux_zen #para computadores mais antigos ( caso não funcione, não ultilize )
 
@@ -58,6 +60,16 @@
 
   #Enable gamescope for Steam
   programs.steam.gamescopeSession.enable = true;
+  
+  #Enable Firewall
+  networking.firewall = {
+  enable = true;
+  allowedTCPPorts = [ 80 443 ];
+  allowedUDPPortRanges = [
+    { from = 4000; to = 4007; }
+    { from = 8000; to = 8010; }
+  ];
+  };
 
   ##Gnome Session ( only for GNOME interface, I think so )
   #GNOME without the apps
