@@ -30,6 +30,7 @@
   bluez
   gnome.gnome-disk-utility
   anydesk
+  lshw
   gnome.nautilus #apenas GNOME without the apps sem a #
   gnome.gnome-software
   flatpak
