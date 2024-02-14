@@ -30,7 +30,6 @@
   bluez
   gnome.gnome-disk-utility
   anydesk
-  lshw
   gnome.nautilus #apenas GNOME without the apps sem a #
   gnome.gnome-software
   flatpak
@@ -51,6 +50,17 @@
   #Enable Kernels Packages
   #boot.kernelPackages = pkgs.linuxPackages_latest; #para computadores mais novos
   #boot.kernelPackages = pkgs.linuxPackages_zen; #para computadores mais antigos
+
+  #Enable an experimental Rust support:
+  boot.kernelPatches = [
+  {
+    name = "Rust Support";
+    patch = null;
+    features = {
+      rust = true;
+     };
+   }
+  ];
 
   #Enable Steam
   programs.steam = {
