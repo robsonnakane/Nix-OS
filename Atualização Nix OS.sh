@@ -23,7 +23,7 @@ sudo nixos-rebuild switch --upgrade;
 #flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo; flatpak install flathub com.skype.Client -y; flatpak install flathub com.adobe.Flash-Player-Projector -y; flatpak install flathub com.transmissionbt.Transmission -y; flatpak install flathub com.adobe.Reader;
 
 ##Atualização do Flatpak##
-flatpak update -y;
+sudo flatpak update -y;
 
 sudo nix-store --optimise;
 
