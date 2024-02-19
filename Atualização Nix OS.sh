@@ -20,7 +20,7 @@ sudo nix-collect-garbage
 sudo nixos-rebuild switch --upgrade;
 
 ##Instalação dos programas Flatpak##
-#flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo; flatpak install flathub com.skype.Client -y; flatpak install flathub com.adobe.Flash-Player-Projector -y; flatpak install flathub com.transmissionbt.Transmission -y;
+#flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo; flatpak install flathub com.skype.Client -y; flatpak install flathub com.adobe.Flash-Player-Projector -y; flatpak install flathub com.transmissionbt.Transmission -y; flatpak install flathub com.adobe.Reader;
 
 ##Atualização do Flatpak##
 flatpak update -y;
