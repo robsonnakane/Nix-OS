@@ -6,7 +6,7 @@
   google-chrome
   thunderbird
   firefox
-  neofetch
+  screenfetch
   gnome.simple-scan
   jdk
   btop
