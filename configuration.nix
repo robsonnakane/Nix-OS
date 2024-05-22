@@ -6,7 +6,6 @@
   google-chrome
   thunderbird
   firefox
-  screenfetch
   gnome.simple-scan
   jdk
   btop
@@ -24,16 +23,19 @@
   gnome.gnome-boxes
   libsForQt5.kate
   lsd
-  krusader
-  libsForQt5.kompare
   foomatic-db
   bluez
   gnome.gnome-disk-utility
   anydesk
   gnome.nautilus #apenas GNOME without the apps sem a #
-  gnome.gnome-software
+  gnome.gnome-tweaks
   flatpak
-  adobe-reader
+  gnome.gnome-software  
+  lshw
+  python3
+  screenfetch
+  libreoffice-qt
+  collision
   #pkgs.linuxKernel.kernels.linux_latest_libre #para computadores mais novos
   #pkgs.linuxKernel.kernels.linux_zen #para computadores mais antigos ( caso não funcione, não ultilize )
 
