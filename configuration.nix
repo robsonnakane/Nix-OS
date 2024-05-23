@@ -36,9 +36,9 @@
   screenfetch
   libreoffice-qt
   collision
-  oraclejdk11
-  sqldeveloper
-  #pkgs.linuxKernel.kernels.linux_latest_libre #para computadores mais novos
+  #oraclejdk11 ##para instalação do sqldeveloper
+  #sqldeveloper
+  pkgs.linuxKernel.kernels.linux_latest_libre #para computadores mais novos
   #pkgs.linuxKernel.kernels.linux_zen #para computadores mais antigos ( caso não funcione, não ultilize )
 
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -53,7 +53,7 @@
   services.flatpak.enable = true;
 
   #Enable Kernels Packages
-  #boot.kernelPackages = pkgs.linuxPackages_latest; #para computadores mais novos
+  boot.kernelPackages = pkgs.linuxPackages_latest; #para computadores mais novos
   #boot.kernelPackages = pkgs.linuxPackages_zen; #para computadores mais antigos
 
   #Enable an experimental Rust support:
