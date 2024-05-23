@@ -36,8 +36,6 @@
   screenfetch
   libreoffice-qt
   collision
-  #oraclejdk11 ##para instalação do sqldeveloper
-  #sqldeveloper
   pkgs.linuxKernel.kernels.linux_latest_libre #para computadores mais novos
   #pkgs.linuxKernel.kernels.linux_zen #para computadores mais antigos ( caso não funcione, não ultilize )
 
