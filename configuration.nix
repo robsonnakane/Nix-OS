@@ -33,7 +33,7 @@
   gnome.gnome-software  
   lshw
   python3
-  screenfetch
+  fastfetch
   libreoffice-qt
   collision
   pkgs.linuxKernel.kernels.linux_latest_libre #para computadores mais novos
