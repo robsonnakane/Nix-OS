@@ -75,6 +75,11 @@
    }
   ];
 
+#Auto Upgrade System
+system.autoUpgrade = {
+  enable = true;
+  dates = "daily";
+};
   ##Enable Steam
   #programs.steam = {
   #enable = true;
