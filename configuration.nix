@@ -9,7 +9,7 @@
   simple-scan
   jdk
   btop
-  kitty
+  ptyxis
   spotify
   vlc
   zoom-us
@@ -46,9 +46,6 @@
   tuxguitar
   rsync
   tailscale
-  #pkgs.linuxKernel.kernels.linux_latest_libre #para computadores mais novos
-  pkgs.linuxKernel.kernels.linux_zen #para computadores mais antigos ( caso não funcione, não ultilize )
-
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
@@ -59,27 +56,28 @@
 
   #Enable Flatpak
   services.flatpak.enable = true;
-
-  #Enable Kernels Packages
-  #boot.kernelPackages = pkgs.linuxPackages_latest; #para computadores mais novos
-  boot.kernelPackages = pkgs.linuxPackages_zen; #para computadores mais antigos
-
-  #Enable an experimental Rust support:
-  boot.kernelPatches = [
+  
   {
-    name = "Rust Support";
-    patch = null;
-    features = {
-      rust = true;
-     };
-   }
-  ];
+   system.autoUpgrade = {
+    enable = true;
+    allowReboot = false;          # como você quer
+    dates = "daily";
+    # randomizedDelaySec = "30min";  # opcional
+  };
 
-#Auto Upgrade System
-system.autoUpgrade = {
-  enable = true;
-  dates = "daily";
-};
+  # Notificação após o upgrade
+  systemd.services.nixos-upgrade = {
+    serviceConfig.ExecStartPost = [
+      # Notificação de desktop (precisa de sessão gráfica ativa)
+      "${pkgs.libnotify}/bin/notify-send -u critical 'NixOS atualizado' 'Verifique se precisa reiniciar o sistema'"
+    ];
+  };
+
+  # Necessário para o notify-send funcionar
+  environment.systemPackages = with pkgs; [
+    libnotify
+  ];
+}
 
   ##Enable Steam
   #programs.steam = {
