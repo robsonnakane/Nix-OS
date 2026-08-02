@@ -146,7 +146,8 @@
   tuxguitar
   rsync
   tailscale
-  libnotify  
+  libnotify
+  pkgs.kdePackages.partitionmanager
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
