@@ -202,6 +202,18 @@ nix = {
   };
 };
 
+
+fileSystems."/mnt/sda1" = {
+  device = "/dev/disk/by-uuid/COLOQUE-O-UUID-AQUI";
+  fsType = "btrfs";
+  options = [ 
+    "users" 
+    "nofail" 
+    "compress=zstd" # Ativa compressão transparente para economizar espaço
+    "rw"            # Garante acesso de leitura e escrita
+  ];
+};
+
   ##Enable Steam
   #programs.steam = {
   #enable = true;
