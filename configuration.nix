@@ -222,7 +222,6 @@ nix = {
   };
 
 ##Tailscale configuration
-{
   services.tailscale = {
     # Enable tailscale at startup
     enable = true;
@@ -231,7 +230,6 @@ nix = {
     # authKeyFile = "/run/secrets/tailscale_key";
     # Note: maximum expire time is 90 days
   };
-}
 
   ##Gnome Session ( only for GNOME interface, I think so )
   #GNOME without the apps
