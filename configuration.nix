@@ -202,7 +202,7 @@ nix = {
   };
 };
 
-
+##Montagem do disco extra (alterar as informações como sda ou sdb alé do código UUID
 fileSystems."/mnt/sda1" = {
   device = "/dev/disk/by-uuid/99bdcf5c-4a8d-46b4-af38-2a1fc2f0756c";
   fsType = "btrfs";
