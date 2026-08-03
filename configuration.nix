@@ -244,6 +244,14 @@ fileSystems."/mnt/sda1" = {
     # Note: maximum expire time is 90 days
   };
 
+ ##Set Ptyxis as the default terminal in the configuration.
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [ "org.gnome.Ptyxis.desktop" ];
+};
+};
+
   ##Gnome Session ( only for GNOME interface, I think so )
   #GNOME without the apps
   services.gnome.core-utilities.enable = false;
