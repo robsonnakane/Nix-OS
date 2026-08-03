@@ -50,8 +50,10 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  #services.xserver.displayManager.gdm.enable = true; (old)
+  #services.xserver.desktopManager.gnome.enable = true; (old)
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -146,9 +148,9 @@
   tuxguitar
   rsync
   tailscale
-  libnotify
+  libnotify  
   pkgs.kdePackages.partitionmanager
-  ];
+];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -173,9 +175,6 @@
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
-  #Enable Flatpak
-  services.flatpak.enable = true;
-
   ##AutoUpgrade & Reboot Notification	
 
   system.autoUpgrade = {
@@ -197,7 +196,7 @@ nix = {
   settings.auto-optimise-store = true;
   gc = {
     automatic = true;
-    dates = "weekly";
+    dates = "daily";
     options = "--delete-older-than 7d";
   };
 };
@@ -244,7 +243,7 @@ fileSystems."/mnt/sda1" = {
     # Note: maximum expire time is 90 days
   };
 
- ##Set Ptyxis as the default terminal in the configuration.
+##Set Ptyxis as the default terminal in the configuration.
   xdg.terminal-exec = {
     enable = true;
     settings = {
@@ -252,14 +251,42 @@ fileSystems."/mnt/sda1" = {
 };
 };
 
+##FlatPaks AutoUpdate
+services.flatpak.enable = true;
+
+# Criar o serviço que roda o comando de atualização
+systemd.services.flatpak-auto-update = {
+  description = "Atualização Automática dos Flatpaks";
+  after = [ "network-online.target" ];
+  wants = [ "network-online.target" ];
+  serviceConfig = {
+    Type = "oneshot";
+    ExecStart = "${pkgs.flatpak}/bin/flatpak update -y --noninteractive";
+  };
+};
+
+# Criar o temporizador diário para rodar o serviço acima
+systemd.timers.flatpak-auto-update = {
+  description = "Timer para Atualização Automática dos Flatpaks";
+  wantedBy = [ "timers.target" ];
+  timerConfig = {
+    OnCalendar = "daily";
+    Persistent = true; # Executa logo após o boot se o PC estava desligado no horário regular
+  };
+};
+	
   ##Gnome Session ( only for GNOME interface, I think so )
   #GNOME without the apps
-  services.gnome.core-utilities.enable = false;
-  
+  #services.gnome.core-utilities.enable = false; (old)
+  services.gnome.core-apps.enable = false;
+
   #Disabling GNOME services
-  services.gnome.tracker-miners.enable = false;
-  services.gnome.tracker.enable = false;
-  
+  #services.gnome.tracker-miners.enable = false; (old)
+  #services.gnome.tracker.enable = false;(old)
+  services.gnome.tinysparql.enable = false;
+  services.gnome.localsearch.enable = false;
+
+
   #GNOME games
   #services.gnome.games.enable = true;
  
