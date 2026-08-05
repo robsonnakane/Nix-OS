@@ -2,6 +2,8 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 #Robson note: copy and paste, only the information you need
+#sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old
+
 
 { config, pkgs, ... }:
 
