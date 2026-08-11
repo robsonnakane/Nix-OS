@@ -16,7 +16,7 @@
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.grub.useOSProber = false;
   # Use provided UUIDs instead of blkid probing (required for btrfs subvolumes)
   boot.loader.grub.fsIdentifier = "provided";
 
@@ -110,6 +110,7 @@
   environment.systemPackages = with pkgs; [
   #steam
   #wineWowPackages.waylandFull  
+  nix-index
   google-chrome
   thunderbird
   firefox
@@ -136,13 +137,9 @@
   nautilus
   gnome-tweaks
   flatpak
-  gnome-software  
   lshw
   python3
   fastfetch
-  collision
-  distrobox
-  boxbuddy
   audacity
   kdePackages.gwenview
   gimp
@@ -153,8 +150,7 @@
   rsync
   tailscale
   libnotify  
-  pkgs.kdePackages.partitionmanager
-];
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -180,7 +176,6 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   ##AutoUpgrade & Reboot Notification	
-
   system.autoUpgrade = {
     enable = true;
     allowReboot = false;          # como você quer
@@ -196,8 +191,10 @@
     ];
   };
 
-nix = {
-  settings.auto-optimise-store = true;
+  nix.settings.experimental-features = [ "nix-command" ];
+
+  nix = {
+    settings.auto-optimise-store = true;
   gc = {
     automatic = true;
     dates = "daily";
@@ -206,7 +203,7 @@ nix = {
 };
 
 ##Montagem do disco extra (alterar as informações como sda ou sdb alé do código UUID
-fileSystems."/mnt/sda1" = {
+fileSystems."/mnt/sdb1" = {
   device = "/dev/disk/by-uuid/99bdcf5c-4a8d-46b4-af38-2a1fc2f0756c";
   fsType = "btrfs";
   options = [ 
