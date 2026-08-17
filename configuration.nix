@@ -275,7 +275,43 @@ systemd.timers.flatpak-auto-update = {
     Persistent = true; # Executa logo após o boot se o PC estava desligado no horário regular
   };
 };
-	
+
+{
+  # Cria o serviço de verificação do Nix Store
+  systemd.services.nix-store-verify = {
+    description = "Verificação completa de integridade do Nix Store";
+    
+    # Garante que o comando use os binários do pacote Nix instalado
+    path = [ pkgs.nix ];
+    
+    script = ''
+      echo "Iniciando verificação profunda do /nix/store..."
+      nix-store --verify --check-contents
+      echo "Verificação concluída com sucesso."
+    '';
+
+    serviceConfig = {
+      Type = "oneshot";
+      # Opcional: Executa com prioridade mais baixa para não travar o PC se você estiver usando
+      Nice = 19;
+      CPUSchedulingPolicy = "idle";
+    };
+  };
+
+  # Agenda a execução automática do serviço acima
+  systemd.timers.nix-store-verify = {
+    description = "Disparador semanal para o serviço nix-store-verify";
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      # Executa semanalmente ( Atalho para toda segunda-feira às 00:00) 
+      OnCalendar = "weekly";
+      # Se o PC estava desligado na hora, executa assim que ligar
+      Persistent = true;
+    };
+  };
+
+}
+
   ##Gnome Session ( only for GNOME interface, I think so )
   #GNOME without the apps
   #services.gnome.core-utilities.enable = false; (old)
