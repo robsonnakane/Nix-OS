@@ -276,7 +276,6 @@ systemd.timers.flatpak-auto-update = {
   };
 };
 
-{
   # Cria o serviço de verificação do Nix Store
   systemd.services.nix-store-verify = {
     description = "Verificação completa de integridade do Nix Store";
@@ -309,8 +308,6 @@ systemd.timers.flatpak-auto-update = {
       Persistent = true;
     };
   };
-
-}
 
   ##Gnome Session ( only for GNOME interface, I think so )
   #GNOME without the apps
