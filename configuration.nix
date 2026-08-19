@@ -144,7 +144,6 @@
   kdePackages.gwenview
   gimp
   transmission_4
-  zoom-us
   telegram-desktop
   tuxguitar
   rsync
@@ -254,6 +253,18 @@ fileSystems."/mnt/sdb1" = {
 
 ##FlatPaks AutoUpdate
 services.flatpak.enable = true;
+
+# Declara os aplicativos que você quer instalados pelo Flathub
+  services.flatpak.packages = [
+    "com.mattjakeman.ExtensionManager"
+    "com.google.ChromeDev"
+    "com.github.tchx84.Flatseal"
+    "net.mkiol.SpeechNote"
+    "com.github.IsmaelMartinez.teams_for_linux"
+  ];
+
+  # Remove automaticamente Flatpaks instalados manualmente que não estejam listados acima
+  services.flatpak.removeUnmanagedPackages = true;
 
 # Criar o serviço que roda o comando de atualização
 systemd.services.flatpak-auto-update = {
