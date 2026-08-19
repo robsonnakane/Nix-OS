@@ -162,7 +162,7 @@
     bluez
     rpi-imager
     mediawriter
-    transmission_4
+    pkgs.transmission_4
 
     # Outros
     flatpak
