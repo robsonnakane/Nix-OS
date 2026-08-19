@@ -134,6 +134,7 @@
     thunderbird
     telegram-desktop
     zoom-us
+    pkgs.teams
 
     # Mídia e edição
     vlc
@@ -145,12 +146,14 @@
     gimp
     inkscape
     kdePackages.gwenview
+    pkgs.obs-studio
 
     # Produtividade
     onlyoffice-desktopeditors
     kdePackages.kate
     ptyxis
-
+    pkgs.obsidian
+    
     # Sistema / Hardware
     simple-scan
     gnome-disk-utility
@@ -163,6 +166,7 @@
     rpi-imager
     mediawriter
     pkgs.transmission_4
+    pkgs.kdePackages.kget
 
     # Outros
     flatpak
@@ -274,6 +278,8 @@
       desired=(
         # Exemplos (descomente e adicione os que quiser):
         "com.google.ChromeDev"
+        "com.github.tchx84.Flatseal"
+        "net.mkiol.SpeechNote"
             )
 
       # Instala os Flatpaks desejados
