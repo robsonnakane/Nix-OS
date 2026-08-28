@@ -134,7 +134,7 @@
     thunderbird
     telegram-desktop
     zoom-us
-    pkgs.teams
+    pkgs.teams-for-linux
 
     # Mídia e edição
     vlc
