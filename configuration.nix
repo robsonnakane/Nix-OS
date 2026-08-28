@@ -280,6 +280,7 @@
         "com.google.ChromeDev"
         "com.github.tchx84.Flatseal"
         "net.mkiol.SpeechNote"
+        "org.sparkleshare.SparkleShare"
             )
 
       # Instala os Flatpaks desejados
