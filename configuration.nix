@@ -195,6 +195,10 @@
   # Flatpak
   services.flatpak.enable = true;
 
+  # Cooler Control
+  programs.coolercontrol = {
+    enable = true;
+
   ###############################################################################
   # Montagem de disco extra
   ###############################################################################
@@ -219,7 +223,7 @@
     };
     gc = {
       automatic = true;
-      dates = "daily";
+      dates = "weekly";
       options = "--delete-older-than 7d";
     };
   };
@@ -230,7 +234,7 @@
   system.autoUpgrade = {
     enable = true;
     allowReboot = false;
-    dates = "daily";
+    dates = "weekly";
   };
 
   # Notificação após upgrade
@@ -257,7 +261,7 @@
     description = "Timer para Atualização Automática dos Flatpaks";
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "daily";
+      OnCalendar = "weekly";
       Persistent = true;
     };
   };
