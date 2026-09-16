@@ -194,11 +194,7 @@
 
   # Flatpak
   services.flatpak.enable = true;
-
-  # Cooler Control
-  programs.coolercontrol = {
-    enable = true;
-
+  
   ###############################################################################
   # Montagem de disco extra
   ###############################################################################
