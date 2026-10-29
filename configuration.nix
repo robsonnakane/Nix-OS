@@ -68,21 +68,26 @@
   };
 
   ###############################################################################
-  # Desktop Environment (GNOME)
+  # Desktop Environment (GNOME/Lxqt)
   ###############################################################################
   services.xserver.enable = true;
 
-  services.desktopManager.gnome.enable = true;
-  services.displayManager.gdm.enable = true;
+  #Lxqt Services
+  services.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.lxqt.enable = true;
+
+  # GNOME Services
+  #services.desktopManager.gnome.enable = true;
+  #services.displayManager.gdm.enable = true;
   services.displayManager.autoLogin = {
     enable = true;
     user = "robsonnakane";
   };
 
   # GNOME minimalista
-  services.gnome.core-apps.enable = false;
-  services.gnome.tinysparql.enable = false;
-  services.gnome.localsearch.enable = false;
+  #services.gnome.core-apps.enable = false;
+  #services.gnome.tinysparql.enable = false;
+  #services.gnome.localsearch.enable = false;
 
   # Terminal padrão
   xdg.terminal-exec = {
