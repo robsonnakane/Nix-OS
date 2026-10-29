@@ -127,6 +127,7 @@
     rsync
     libnotify
     python3
+    dpkg
 
     # Navegadores e comunicação
     google-chrome
@@ -194,7 +195,7 @@
 
   # Flatpak
   services.flatpak.enable = true;
-  
+
   ###############################################################################
   # Montagem de disco extra
   ###############################################################################
